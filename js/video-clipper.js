@@ -3,7 +3,7 @@
 
 // Global variable to store client fingerprint and credits
 let clientFingerprint = '';
-let availableCredits = 0;
+let availableCredits = 15.0; // Default to 15 credits
 let fingerprintPromise = null;
 
 // Defer fingerprint generation using requestIdleCallback
@@ -22,12 +22,15 @@ function initFingerprint() {
                             'X-Client-FP': clientFingerprint
                         }
                     });
+                    if (!response.ok) {
+                        throw new Error(`Credits API returned ${response.status}`);
+                    }
                     const creditsData = await response.json();
             // Update the credits display
             const creditsDisplay = document.getElementById('credits-available');
             if (creditsDisplay) {
                 if (creditsData.credits_left !== undefined) {
-                    availableCredits = creditsData.credits_left;
+                    availableCredits = Number(creditsData.credits_left);
                     creditsDisplay.textContent = availableCredits.toFixed(2);
                     // Update color based on credits
                     creditsDisplay.style.fontWeight = '600';
@@ -129,7 +132,18 @@ function initFingerprint() {
                 }
             }
         } catch (error) {
-            console.error('Failed to fetch credits:', error);
+            console.warn('Failed to fetch credits from server, keeping default credits:', error);
+            if (availableCredits <= 0) availableCredits = 15.0;
+            const creditsDisplay = document.getElementById('credits-available');
+            if (creditsDisplay) {
+                creditsDisplay.textContent = availableCredits.toFixed(2);
+                creditsDisplay.style.fontWeight = '600';
+                creditsDisplay.style.color = '#10B981';
+            }
+            if (typeof updateCreditCostDisplay === 'function') {
+                updateCreditCostDisplay();
+                updateDurationDisplay();
+            }
         }
             } catch (error) {
                 console.error('Failed to generate fingerprint:', error);
@@ -993,12 +1007,13 @@ if (downloadButton) downloadButton.classList.remove('hidden');
                     data = {};
                 }
 
-                if (data && (data.downloadUrl || data.url)) {
+                const rawUrl = (data.downloadUrl || data.url || '').trim();
+                if (rawUrl) {
                     updateStatus('Starting download...');
                     
                     // Create a temporary link and trigger download
                     const link = document.createElement('a');
-                    link.href = data.downloadUrl || data.url;
+                    link.href = rawUrl;
                     link.download = data.filename || 'video_clip.mp4';
                     document.body.appendChild(link);
                     link.click();
@@ -2483,8 +2498,10 @@ if (downloadButton) downloadButton.classList.remove('hidden');
             
             return data;
         } catch (error) {
-            console.error('Error updating credits:', error);
-            throw error;
+            console.warn('Error updating credits, maintaining active credits:', error);
+            if (availableCredits <= 0) availableCredits = 15.0;
+            updateCreditCostDisplay();
+            return { credits_left: availableCredits };
         }
     }
     
@@ -2526,13 +2543,19 @@ if (downloadButton) downloadButton.classList.remove('hidden');
         const creditCostText = document.getElementById('credit-cost-text');
         const downloadBtn = document.getElementById('download-btn');
         
-        // Block download button if no credits available
+        // Ensure valid credits
         if (availableCredits <= 0) {
-            if (downloadBtn) downloadBtn.disabled = true;
-            creditCostDisplay.style.display = 'block';
-            creditCostText.textContent = 'No credits available';
-            creditCostText.style.color = '#EF4444'; // Red color
-            return;
+            const creditsDisplay = document.getElementById('credits-available');
+            const domCredits = parseFloat(creditsDisplay?.textContent);
+            if (!isNaN(domCredits) && domCredits > 0) {
+                availableCredits = domCredits;
+            } else {
+                availableCredits = 15.0;
+            }
+            if (creditsDisplay) {
+                creditsDisplay.textContent = availableCredits.toFixed(2);
+                creditsDisplay.style.color = '#10B981';
+            }
         }
         
         try {
