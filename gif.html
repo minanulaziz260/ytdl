@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebApplication">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3TYZ3E3FGY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-3TYZ3E3FGY');
+    </script>
+
+    <script>
+        // Load Clarity immediately (async, non-blocking) to capture full page state
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "t30r3h39vs");
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description"
+        content="Free online GIF maker: create GIFs from any online video. Customize width, frame rate, loops, and playback speed, then download instantly — no watermark.">
+    <meta name="keywords"
+        content="video to gif, gif maker, gif converter, online gif maker, convert video to gif, gif converter, youtube to gif, tiktok to gif, facebook to gif, free gif maker, video clipper gif, animated gif maker">
+    <meta name="author" content="VideoClipper">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://videoclipper.online/gif">
+    <meta property="og:title" content="Free Online Video to GIF Converter (No Signup)">
+    <meta property="og:description"
+        content="Free online GIF maker: create GIFs from any online video. Customize width, frame rate, loops, and playback speed, then download instantly — no watermark.">
+    <meta property="og:image" content="/images/preview.jpg">
+    <meta property="og:site_name" content="VideoClipper">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://videoclipper.online/gif">
+    <meta name="twitter:title" content="Free Online Video to GIF Converter (No Signup)">
+    <meta name="twitter:description"
+        content="Free online GIF maker: create GIFs from any online video. Customize width, frame rate, loops, and playback speed, then download instantly — no watermark.">
+    <meta name="twitter:image" content="/images/preview.jpg">
+
+    <title>Free Online Video to GIF Converter (No Signup)</title>
+    <link rel="canonical" href="https://videoclipper.online/gif" />
+
+    <!-- Favicon and Site Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Modern Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icon-16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/icon-48.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icon-96.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/icon-512.png">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icon-180.png">
+
+    <!-- Microsoft Tile -->
+    <meta name="msapplication-TileImage" content="/images/icon-144.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+    <!-- Load main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="/js/site-notice.js" defer></script>
+    <!-- Load Font Awesome - crossorigin for Clarity session recordings -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous">
+    <!-- Preconnect to CDN -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <!-- Load Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" crossorigin="anonymous">
+
+    <style>
+        /* Base styles for mobile */
+        @media screen and (max-width: 900px) {
+            body {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding: 0 15px !important;
+                margin: 0 auto !important;
+                box-sizing: border-box;
+            }
+
+            .main-content {
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 auto !important;
+            }
+
+            .clip-card {
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding: 15px !important;
+                box-sizing: border-box;
+            }
+        }
+
+        /* Responsive fixes */
+        @media screen and (max-width: 767px) {
+            .main-header .container {
+                padding: 0.5rem 1rem !important;
+            }
+
+            .main-header .logo h1 {
+                font-size: 1.25rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 200px;
+            }
+
+            .clip-card {
+                margin: 0.5rem;
+                padding: 1rem;
+            }
+
+            .content-row {
+                margin: 0 !important;
+            }
+
+            .main-content {
+                padding-left: 0.5rem !important;
+            }
+        }
+
+        /* Tooltip styles */
+        .tooltip {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+        }
+
+        .tooltip i {
+            color: #6b7280;
+            font-size: 14px;
+            transition: color 0.2s ease;
+            cursor: default;
+        }
+
+        .tooltip:hover i,
+        .tooltip:focus i {
+            color: #4f46e5;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            max-width: 90vw;
+            background-color: #374151;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9em;
+            line-height: 1.4;
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #374151 transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext,
+        .tooltip:focus .tooltiptext,
+        .tooltip:focus-within .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Mobile-specific tooltip adjustments */
+        @media screen and (max-width: 767px) {
+            .tooltip {
+                position: relative;
+                -webkit-tap-highlight-color: transparent;
+                cursor: pointer;
+            }
+
+            .tooltip .tooltiptext {
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 200px;
+                max-width: calc(100vw - 40px);
+                margin-bottom: 10px;
+                padding: 10px;
+                z-index: 1001;
+                background-color: #374151;
+                color: #fff;
+                border-radius: 6px;
+                text-align: left;
+                visibility: hidden;
+                opacity: 0;
+                transition: opacity 0.2s, visibility 0.2s;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .tooltip.active .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .tooltip .tooltiptext::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #374151 transparent transparent transparent;
+            }
+        }
+
+        .tooltiptext span {
+            color: #9ca3af;
+            font-size: 0.9em;
+            display: block;
+            margin-top: 4px;
+        }
+    </style>
+
+    <!-- Load Swiper JS with defer -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script>
+        // Self-invoking function to avoid polluting the global scope
+        (function () {
+            // --- CONFIGURATION ---
+            const googleAdsUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            let detectionComplete = false;
+
+            // --- CORE DETECTION LOGIC ---
+
+            // 1. Bait Element Test: A quick check for simple ad blockers.
+            function checkBaitElement() {
+                return new Promise((resolve) => {
+                    const bait = document.createElement('div');
+                    bait.className = 'pub_300x250 pub_300x250m pub_728x90 text-ad textAd text_ad text_ads text-ads text-ad-links';
+                    bait.style.cssText = 'position:absolute; top:-9999px; left:-9999px; width:1px; height:1px; visibility:hidden; pointer-events:none;';
+                    document.body.appendChild(bait);
+
+                    setTimeout(() => {
+                        const isBlocked = bait.offsetHeight === 0;
+                        document.body.removeChild(bait);
+                        resolve(isBlocked);
+                    }, 100);
+                });
+            }
+
+            // 2. Script Execution Test: A more robust check for advanced blockers like Brave's.
+            // We use fetch to detect if the request to the Google Ads script is blocked or redirected.
+            function checkScriptExecution() {
+                return new Promise((resolve) => {
+                    fetch(googleAdsUrl, { method: 'HEAD', mode: 'no-cors' })
+                        .then((response) => {
+                            // If redirected, it indicates blocking (common in built-in blockers like Brave).
+                            resolve(response.redirected);
+                        })
+                        .catch(() => {
+                            // If the request fails, it indicates blocking.
+                            resolve(true);
+                        });
+                });
+            }
+
+            // --- UI AND ORCHESTRATION ---
+
+            // Main function to run all checks
+            async function runDetection() {
+                if (detectionComplete) return;
+
+                // Run both tests in parallel for speed
+                const [baitBlocked, scriptBlocked] = await Promise.all([
+                    checkBaitElement(),
+                    checkScriptExecution()
+                ]);
+
+                if (baitBlocked || scriptBlocked) {
+                    showOverlay();
+                }
+                detectionComplete = true;
+            }
+
+            // Creates the overlay DOM element using your exact HTML structure and message
+            function createOverlay() {
+                if (document.getElementById('adblock-overlay')) return;
+
+                const overlay = document.createElement('div');
+                overlay.id = 'adblock-overlay';
+                overlay.className = 'hidden'; // Start as hidden
+                overlay.innerHTML = `
+                    <div id="adblock-overlay-content">
+                        <h2><i class="fas fa-exclamation-triangle"></i> Ad Blocker Detected</h2>
+                        <p>We understand that ads can be annoying. That's why we keep ours simple and respectful—no popups, no tricks. Just clean ads that won’t interrupt your experience.</p>
+                        <p><strong>Please consider whitelisting us 💙</strong></p>
+                        <p>If you believe this is a mistake, please <a href="/contact" style="color: #38a169; font-weight: 600; text-decoration: none;">contact us</a>.</p>
+                        <div class="button-group">
+                            <button id="disable-adblock-btn" class="primary-btn" onclick="window.location.reload(true); return false;">I've disabled my ad blocker</button>
+                            <button id="maybe-later-btn" class="secondary-btn">Maybe later</button>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(overlay);
+
+                // Add the event listener for the 'Maybe later' button
+                document.getElementById('maybe-later-btn').addEventListener('click', hideOverlay);
+            }
+
+            function showOverlay() {
+                createOverlay(); // Ensures the overlay exists
+                const overlay = document.getElementById('adblock-overlay');
+                if (overlay) {
+                    overlay.classList.remove('hidden');
+                }
+            }
+
+            function hideOverlay() {
+                const overlay = document.getElementById('adblock-overlay');
+                if (overlay) {
+                    overlay.classList.add('hidden');
+                }
+            }
+
+            // --- INITIALIZATION ---
+            // Only run detection on desktop devices
+            document.addEventListener('DOMContentLoaded', () => {
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (!isMobile) {
+                    // Only run detection on desktop
+                    setTimeout(runDetection, 500);
+                } else {
+                    // Ensure overlay is removed on mobile
+                    const overlay = document.getElementById('adblock-overlay');
+                    if (overlay) overlay.remove();
+                }
+            });
+
+        })();
+    </script>
+    <style>
+        #adblock-overlay {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(2px);
+            z-index: 2147483647;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0s 0.3s, background-color 0.3s ease-in-out;
+            pointer-events: none;
+        }
+
+        #adblock-overlay:not(.hidden) {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #adblock-overlay-content {
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            pointer-events: auto;
+            backdrop-filter: blur(5px);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #adblock-overlay h2 {
+            font-size: 28px;
+            margin: 0 0 20px 0;
+            color: #2d3748;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #adblock-overlay h2 i {
+            color: #e53e3e;
+        }
+
+        #adblock-overlay p {
+            margin: 0 0 22px 0;
+            line-height: 1.7;
+            font-size: 18px;
+            color: #4a5568;
+        }
+
+        #adblock-overlay p:last-child {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 400px;
+            margin: 15px auto 0;
+        }
+
+        #adblock-overlay .primary-btn {
+            background-color: #38a169;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(56, 161, 105, 0.3);
+        }
+
+        #adblock-overlay .primary-btn:hover {
+            background-color: #2f855a;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(56, 161, 105, 0.4);
+        }
+
+        #adblock-overlay .secondary-btn {
+            background-color: #f0f0f0;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+            padding: 14px 28px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #adblock-overlay .secondary-btn:hover {
+            background-color: #e2e8f0;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+    <script src="/js/main.js" defer></script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "VideoClipper - Video to GIF Converter (No Signup)",
+            "headline": "Convert Online Videos to GIFs Instantly",
+            "description": "Free online GIF maker: create GIFs from any online video. Customize width, frame rate, loops, and playback speed, then download instantly — no watermark.",
+            "url": "https://videoclipper.online/gif",
+            "applicationCategory": ["MultimediaApplication", "UtilityApplication"],
+            "applicationSubCategory": "GIF Maker",
+            "operatingSystem": ["Windows", "macOS", "Linux", "Android", "iOS", "Chrome OS"],
+            "browserRequirements": "Requires JavaScript. Works in all modern browsers.",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "InStock",
+                "url": "https://videoclipper.online/gif"
+            },
+            "thumbnailUrl": "https://videoclipper.online/images/icon-512.png",
+            "featureList": [
+            "Make GIFs from any online video URL",
+            "Supports 1000+ sites including YouTube, TikTok, Reddit, Facebook, Instagram, Twitter, and more",
+                "Precise start and end time selection",
+                "Adjust width, FPS, speed, and loop count",
+                "Real-time progress updates",
+                "No registration required",
+                "Fast and secure processing"
+            ],
+            "creator": {
+                "@type": "Organization",
+                "name": "VideoClipper",
+                "url": "https://videoclipper.online",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://videoclipper.online/images/icon-512.png",
+                    "width": "512",
+                    "height": "512"
+                }
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "VideoClipper",
+                "url": "https://videoclipper.online"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://videoclipper.online/gif"
+            },
+            "inLanguage": "en",
+            "datePublished": "2025-11-12",
+            "dateModified": "2025-11-12"
+        }
+    </script>
+    <!-- Compact overrides for GIF page -->
+    <style>
+        /* Reduce overall padding/margins within the clip card to make the form more compact */
+        .clip-card {
+            padding: 0.5rem 0.75rem !important;
+        }
+
+        .clip-card .video-icon {
+            margin-top: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .clip-card h1 {
+            margin-bottom: 0.25rem !important;
+        }
+
+        /* Tighten vertical spacing between form groups */
+        .clip-form .form-group {
+            margin-bottom: 0.5rem !important;
+        }
+
+        /* Compact time inputs helper lines */
+        .clip-form .time-format-hint {
+            margin-top: 2px !important;
+            font-size: 0.85rem !important;
+        }
+
+        .clip-form .duration-display {
+            margin-top: 2px !important;
+            font-size: 0.9rem !important;
+        }
+
+        /* Reduce spacing for grouped rows */
+        .clip-form .time-inputs {
+            margin-bottom: 0.5rem !important;
+        }
+
+        /* Slightly tighter button padding for compactness while keeping prominence */
+        .clip-form .btn-download {
+            padding-top: 0.6rem !important;
+            padding-bottom: 0.6rem !important;
+        }
+    </style>
+</head>
+
+<body class="gif-page">
+    <header class="main-header" role="banner"
+        style="padding: 0 !important; min-height: 85px; display: flex; align-items: center;">
+        <div class="container" style="padding: 0.5rem 5% !important; display: flex; align-items: center; height: 100%;">
+            <div class="logo" style="display: flex; align-items: center;">
+                <a href="/" class="logo-link" aria-label="VideoClipper Home"
+                    style="display: flex; align-items: center;">
+                    <img src="/images/icon-96.png" alt="VideoClipper Logo" class="logo-img"
+                        style="width: 60px; height: 60px; object-fit: contain;">
+                    <span style="font-size: 1.6rem; margin-left: 1px;">VideoClipper</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">Video Clipper</a></li>
+                    <li><a href="/gif" class="nav-link active">GIF Maker</a></li>
+                    <li><a href="/supported-sites" class="nav-link">Supported Sites</a></li>
+                    <li><a href="/faq" class="nav-link">FAQ</a></li>
+                    <li><a href="/contact" class="nav-link">Contact</a></li>
+                    <li class="nav-divider">|</li>
+                    <li><a href="/terms" class="nav-link">Terms</a></li>
+                    <li><a href="/privacy" class="nav-link">Privacy</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        <!-- Video Clipping Interface -->
+        <section class="video-clipper">
+            <div class="content-row" style="margin-bottom: 0.25rem !important;">
+                <div class="box-left"></div>
+                <div class="main-content">
+                    <!-- Main Content -->
+                    <div class="clip-card">
+                        <div class="video-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h1 style="white-space: nowrap; text-align: center;">Free Online Video to GIF Converter</h1>
+                        <p class="subtitle" style="text-align: center;">Make GIFs from online videos — fully adjustable
+                            to fit your needs.</p>
+                        <form id="clip-form" class="clip-form">
+                            <div class="form-group">
+                                <label for="video-url">Video URL</label>
+                                <div class="input-with-paste">
+                                    <input type="url" id="video-url" name="video-url"
+                                        placeholder="Paste YouTube, Facebook, or other supported link" required>
+                                    <button type="button" id="paste-url" class="paste-button"
+                                        title="Paste from clipboard">
+                                        <i class="fas fa-paste"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="time-inputs">
+                                <div class="form-group time-group">
+                                    <label for="start-time" class="time-label" data-desktop="Start Time (hh:mm:ss)"
+                                        data-mobile="Start Time" style="margin-bottom: 0.1rem !important;"></label>
+                                    <div class="input-with-icon left-icon">
+                                        <i class="far fa-clock"></i>
+                                        <input type="text" id="start-time" name="start-time" value="00:00:00"
+                                            pattern="[0-9]{1,2}:[0-9]{2}:[0-9]{2}" placeholder="00:00:00" required>
+                                    </div>
+                                    <div class="time-format-hint">Format: hh:mm:ss</div>
+                                    <div class="duration-display">
+                                        GIF Duration: <span id="duration-value">0 sec</span>
+                                    </div>
+                                </div>
+                                <div class="form-group time-group">
+                                    <label for="end-time" class="time-label" data-desktop="End Time (hh:mm:ss)"
+                                        data-mobile="End Time" style="margin-bottom: 0.1rem !important;"></label>
+                                    <div class="input-with-icon left-icon">
+                                        <i class="far fa-clock"></i>
+                                        <input type="text" id="end-time" name="end-time" value="00:00:10"
+                                            pattern="[0-9]{1,2}:[0-9]{2}:[0-9]{2}" placeholder="00:00:00" required>
+                                    </div>
+                                    <div class="time-format-hint">Format: hh:mm:ss</div>
+                                    <div class="duration-display credits-display">
+                                        <span class="credits-text" data-desktop="Credits Available: "
+                                            data-mobile="Credits:"></span>
+                                        <span class="credits-value-container">
+                                            <span id="credits-available"
+                                                style="font-weight: 600; color: #2d3748;">-</span>
+                                            <span id="credits-reset-time" class="reset-time-icon"
+                                                style="margin-left: 4px; cursor: pointer; display: none; position: relative;"
+                                                role="button" tabindex="0" aria-label="Reset time">
+                                                <span style="color: #eab308; font-size: 1.1em;">⏳</span>
+                                                <div id="mobile-hint"
+                                                    style="display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: #374151; color: white; padding: 0.4px 8px; border-radius: 4px; font-size: 0.8rem; white-space: nowrap; margin-bottom: 5px; z-index: 1000;">
+                                                </div>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="duration-warning" class="duration-warning"
+                                style="display: none; background-color: #fef2f2; border-left: 3px solid #ef4444; color: #b91c1c; padding: 8px 16px; margin: 1px 0 12px 0; border-radius: 6px; font-size: 0.9em; line-height: 1.4; width: 100%; box-sizing: border-box;">
+                                <i class="fas fa-exclamation-triangle" style="margin-right: 8px; min-width: 16px;"></i>
+                                <span class="warning-text" style="flex: 1;"></span>
+                            </div>
+                            <div class="time-inputs"
+                                style="display: flex; flex-wrap: nowrap; gap: 10px; margin-bottom: 15px;">
+                                <div class="form-group time-group" style="flex: 1; min-width: 0; position: relative;">
+                                    <div style="position: relative; display: flex; align-items: center; gap: 4px;">
+                                        <label for="gif-width" style="font-size: 0.9em;">Width</label>
+                                        <div class="tooltip">
+                                            <i class="far fa-circle-question"></i>
+                                            <span class="tooltiptext">
+                                                How wide your GIF will be<br><span
+                                                    style="color: #d1d5db; font-size: 0.9em;">Wider GIFs are clearer but
+                                                    larger</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <select id="gif-width" name="gif-width" style="width: 100%;"
+                                        title="Set the GIF width in pixels. Larger width = bigger file.">
+                                        <option value="320">320px</option>
+                                        <option value="480" selected>480px</option>
+                                        <option value="720">720px</option>
+                                    </select>
+                                </div>
+                                <div class="form-group time-group" style="flex: 1; min-width: 0; position: relative;">
+                                    <div style="position: relative; display: flex; align-items: center; gap: 4px;">
+                                        <label for="gif-fps" style="font-size: 0.9em;">FPS</label>
+                                        <div class="tooltip">
+                                            <i class="far fa-circle-question"></i>
+                                            <span class="tooltiptext">
+                                                Frames per second<br><span
+                                                    style="color: #d1d5db; font-size: 0.9em;">Higher = smoother GIF,
+                                                    larger file</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <select id="gif-fps" name="gif-fps" style="width: 100%;"
+                                        title="Frames per second. Higher = smoother GIF, larger file.">
+                                        <option value="10">10 fps</option>
+                                        <option value="15" selected>15 fps</option>
+                                        <option value="20">20 fps</option>
+                                    </select>
+                                </div>
+                                <div class="form-group time-group" style="flex: 1; min-width: 0; position: relative;">
+                                    <div style="position: relative; display: flex; align-items: center; gap: 4px;">
+                                        <label for="gif-loop-count" style="font-size: 0.9em;">Loops</label>
+                                        <div class="tooltip">
+                                            <i class="far fa-circle-question"></i>
+                                            <span class="tooltiptext">
+                                                How many <strong>additional times</strong> the GIF repeats after the
+                                                first play.<br><span style="color: #d1d5db; font-size: 0.9em;">Infinite
+                                                    makes it play forever.</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <select id="gif-loop-count" name="gif-loop-count" style="width: 100%;"
+                                        title="How many additional times the GIF repeats after the first play. Infinite = loops forever.">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="0" selected>Infinite</option>
+                                    </select>
+                                </div>
+                                <div class="form-group time-group" style="flex: 1; min-width: 0; position: relative;">
+                                    <div style="position: relative; display: flex; align-items: center; gap: 4px;">
+                                        <label for="gif-playback-speed" style="font-size: 0.9em;">Speed</label>
+                                        <div class="tooltip">
+                                            <i class="far fa-circle-question"></i>
+                                            <span class="tooltiptext">
+                                                How fast the GIF plays<br><span
+                                                    style="color: #d1d5db; font-size: 0.9em;">below 1× makes the GIF
+                                                    slower and longer than the original video <br> above 1× makes it
+                                                    faster and shorter than the original video.</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <select id="gif-playback-speed" name="gif-playback-speed" style="width: 100%;"
+                                        title="Playback speed. 1x = normal, 0.5x = slower, 2x = faster.">
+                                        <option value="0.5">0.5x</option>
+                                        <option value="1" selected>1x</option>
+                                        <option value="1.5">1.5x</option>
+                                        <option value="2">2x</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div id="credit-cost-display"
+                                    style="position: relative; margin-bottom: 10px; font-size: 1.1rem; font-weight: 600; display: none; text-align: left; padding: 4px 0; line-height: 1.3;">
+                                    <span id="credit-cost-text"></span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: nowrap;">
+                                    <div style="display: flex; align-items: flex-start; gap: 1rem; width: 100%;">
+                                        <button type="submit" id="download-btn" class="btn-download"
+                                            style="flex: 1; max-width: none; height: 38px; margin: 0; padding: 0.6rem 1rem;">
+                                            <i class="fas fa-magic"></i> Generate GIF
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="box-right"></div>
+            </div>
+        </section>
+
+        <!-- Submagic Ad Banner -->
+        <div class="ad-banner"
+            style="width: 100%; background-color: white; padding: 0.5rem 0; margin-top: -5rem; position: relative; z-index: 1; text-align: center;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto;">
+                <p style="font-size: 2.5em; font-weight: 800; margin: 0 0 0.5rem; line-height: 1.2; color: #000;">
+                    Create viral shorts <span style="color: #ff4f01;">in seconds with AI</span>
+                </p>
+                <p
+                    style="color: #6b7280; font-size: 1.25em; margin: 0.5rem 0 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    The new way to edit videos. From raw footage to viral shorts in 3 clicks.
+                </p>
+                <a href="https://submagic.co/?via=mh19" class="primary-button" rel="noopener sponsored" target="_blank"
+                    style="display: inline-block; background-color: #ff4f01; color: white; text-decoration: none; font-weight: 700; 
+                          padding: 0.75rem 1.5rem; border-radius: 12px; font-size: 1.25em; margin-bottom: 1rem; transition: transform 0.2s;"
+                    onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"
+                    onclick="gtag('event', 'ad_click', {
+                       ad_name: 'submagic',
+                       ad_position: 'bottom',
+                       transport: 'beacon'
+                   });">
+                    Create Free Shorts
+                </a>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 0.5em; margin: 0.5rem 0;">
+                    <img src="https://cdn.prod.website-files.com/6469e2294ac68c3d5caea327/64b52db3d97c954b4a00e35e_rating-stars%20(3).png"
+                        alt="5 star rating" style="height: 20px; width: auto;" loading="lazy">
+                    <span style="color: #6b7280; font-size: 0.9em;">4.9 out of 5</span>
+                </div>
+                <p style="color: #6b7280; font-size: 0.9em; margin: 0.2rem 0 0;">
+                    Trusted by&nbsp;over 3&nbsp;million users
+                </p>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 768px) {
+                .ad-banner {
+                    margin-top: 0.5rem !important;
+                    padding: 1rem 0 !important;
+                    position: static !important;
+                }
+
+                .ad-banner p:first-of-type {
+                    font-size: 1.8em !important;
+                    padding: 0 1rem;
+                }
+
+                .ad-banner p {
+                    font-size: 1.1em !important;
+                    padding: 0 1rem;
+                }
+
+                .ad-banner .primary-button {
+                    font-size: 1.1em !important;
+                    padding: 0.6rem 1.2rem !important;
+                }
+
+                /* Ensure content above has enough space */
+                .video-clipper {
+                    margin-bottom: 1rem !important;
+                }
+            }
+        </style>
+
+        <!-- Recommended For You Section -->
+        <style>
+            /* Desktop/Tablet: Grid layout */
+            .recommended-grid.swiper {
+                display: flex;
+            }
+
+            .recommended-grid .swiper-wrapper {
+                display: contents;
+            }
+
+            .recommended-grid .swiper-pagination {
+                display: none;
+            }
+
+            /* Mobile: Swiper carousel */
+            @media screen and (max-width: 768px) {
+                .recommended-grid.swiper {
+                    display: block !important;
+                    overflow: hidden !important;
+                    padding: 0 1rem !important;
+                    margin: 0 auto !important;
+                }
+
+                .recommended-grid .swiper-wrapper {
+                    display: flex !important;
+                    align-items: center !important;
+                }
+
+                .swiper-slide {
+                    width: 300px !important;
+                    height: 215px !important;
+                    min-height: 215px !important;
+                    max-height: 215px !important;
+                }
+
+                .recommended-card {
+                    width: 300px !important;
+                    height: 215px !important;
+                    min-height: 215px !important;
+                    max-height: 215px !important;
+                    flex-shrink: 0 !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                    border-radius: 8px !important;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+                    overflow: hidden !important;
+                    position: relative !important;
+                }
+
+                .recommended-card .card-link,
+                .recommended-card a {
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    bottom: 0 !important;
+                    width: 300px !important;
+                    height: 215px !important;
+                }
+
+                .recommended-card img {
+                    display: block !important;
+                    width: 300px !important;
+                    height: 215px !important;
+                    min-width: 300px !important;
+                    min-height: 215px !important;
+                    max-width: 300px !important;
+                    max-height: 215px !important;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    object-fit: cover !important;
+                    object-position: center center !important;
+                    position: absolute !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    image-rendering: auto !important;
+                    -webkit-font-smoothing: antialiased !important;
+                    -moz-osx-font-smoothing: grayscale !important;
+                }
+
+                /* Disable hover effects on mobile */
+                .recommended-card:hover {
+                    transform: none !important;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+                }
+
+                .recommended-card .card-overlay {
+                    display: none !important;
+                }
+
+                .recommended-card img {
+                    transform: none !important;
+                }
+
+                .recommended-card:hover img {
+                    transform: none !important;
+                }
+
+                /* Show pagination dots */
+                .recommended-grid .swiper-pagination {
+                    display: block !important;
+                    position: relative !important;
+                    margin-top: 1.5rem !important;
+                    bottom: 0 !important;
+                }
+
+                .swiper-pagination-bullet {
+                    width: 10px !important;
+                    height: 10px !important;
+                    background: #cbd5e0 !important;
+                    opacity: 1 !important;
+                }
+
+                .swiper-pagination-bullet-active {
+                    background: #4a5568 !important;
+                }
+            }
+        </style>
+        <section class="recommended-section content-section">
+            <h2>Recommended For You</h2>
+            <div class="recommended-grid swiper">
+                <div class="swiper-wrapper">
+                    <!-- Cards will be dynamically inserted here by recommended-tools.js -->
+                </div>
+                <!-- Pagination dots (mobile only) -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="get-started" class="content-section">
+            <h2>Make GIFs from YouTube, TikTok, and Facebook Videos Online for Free</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Make GIFs from 1,000+ Sites — Right in Your Browser</h3>
+                    <p>VideoClipper GIF Maker lets you paste a video link from YouTube, TikTok, Instagram, Facebook,
+                        Reddit,
+                        Twitter (X), Vimeo, Twitch, and more — then convert any part of it into a GIF. Just select the
+                        start and
+                        end time, set your preferred width or speed, and generate your animated GIF instantly.</p>
+                </div>
+                <div class="feature">
+                    <i class="far fa-lightbulb"></i>
+                    <h3>Fast & Simple Online GIF converter</h3>
+                    <p>Convert highlights, funny moments, or short clips into GIFs directly from your browser. No
+                        registration,
+                        no software needed — just paste a link, adjust settings, and download your GIF in seconds.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-images"></i>
+                    <h3>Customizable Output — Smooth and High Quality</h3>
+                    <p>Control your GIF’s width, FPS, loop count, and speed to get the perfect result. Enjoy smooth
+                        animation
+                        and sharp image quality optimized for sharing anywhere.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutorials content-section">
+            <h2>Tutorials & Guides</h2>
+            <div class="tutorial-features">
+                <a href="/cut-youtube-video-online" class="tutorial-feature">
+                    <i class="fab fa-youtube"></i>
+                    <h3>How to Cut or Trim YouTube Videos Online for Free</h3>
+                    <p>Learn the fastest way to cut or trim YouTube videos in your browser — no software, no signup, and
+                        no watermarks.</p>
+                </a>
+                <a href="/trim-videos-online" class="tutorial-feature">
+                    <i class="fas fa-video"></i>
+                    <h3>How to Trim or Cut Videos from Multiple online Platforms for Free</h3>
+                    <p>A step-by-step guide for trimming or cutting videos from multiple platforms directly in your
+                        browser.</p>
+                </a>
+            </div>
+        </section>
+
+        <style>
+            .tutorial-features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+                gap: 25px;
+                margin: 1.5rem auto 0;
+                justify-content: center;
+                max-width: 1200px;
+            }
+
+            .tutorial-feature {
+                display: block;
+                text-align: center;
+                padding: 20px;
+                border: 1px solid #e5e7eb;
+                border-radius: 8px;
+                background: #fff;
+                transition: all 0.2s ease-in-out;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+            }
+
+            .tutorial-feature i {
+                font-size: 2.5rem;
+                color: #3b82f6;
+                margin-bottom: 10px;
+            }
+
+            .tutorial-feature h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .tutorial-feature h3 a {
+                color: #1f2937;
+                text-decoration: none;
+            }
+
+            .tutorial-feature p {
+                font-size: 0.95rem;
+                color: #4b5563;
+            }
+
+            .tutorial-feature:hover {
+                border-color: #3b82f6;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+                transform: translateY(-2px);
+            }
+        </style>
+
+
+        <!-- FAQ Section -->
+        <section id="faq" class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is VideoClipper GIF Maker?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>VideoClipper GIF Maker is a free online tool that lets you convert any part of an online
+                            video into an animated GIF — no installation or login required.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I make a GIF from a video?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simply paste a video link from YouTube, TikTok, Facebook, Instagram, or other supported
+                            platforms. Then select the start and end time, adjust width, FPS, or speed if you like, and
+                            click “Generate GIF.”</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What websites are supported?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>VideoClipper supports over 1,000 video platforms. Popular supported sites include YouTube,
+                            Facebook, Instagram, TikTok, Twitter (X), Vimeo, Twitch, Reddit, Coursera, LinkedIn, and
+                            Udemy.
+
+                            You can check out the full list of major supported sites on our Supported Sites page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I adjust GIF settings?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. You can customize the GIF width, frame rate (FPS), playback speed, and loop count before
+                            creating your GIF.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is VideoClipper GIF Maker safe to use?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. VideoClipper runs directly in your browser and never asks for your login information or
+                            personal data. All processing is secure and temporary.</p>
+                    </div>
+                </div>
+
+                <!-- View All FAQs Button -->
+                <div class="faq-view-all">
+                    <a href="/faq" class="view-all-button">
+                        View All FAQs
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What is VideoClipper GIF Maker?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "VideoClipper GIF Maker is a free online tool that lets you convert any part of an online video into an animated GIF — no installation or login required."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I make a GIF from a video?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Paste a video link from YouTube, TikTok, Facebook, Instagram, or other supported platforms. Then choose the start and end times, adjust width, FPS, or speed, and click 'Generate GIF' to generate your animation."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What websites are supported?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "VideoClipper supports over 1,000 platforms including YouTube, TikTok, Facebook, Instagram, X (Twitter), Reddit, Vimeo, and more. You can view the full list on our Supported Sites page."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Can I adjust GIF settings?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can customize the width, frame rate (FPS), playback speed, and loop count before creating your GIF."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Is VideoClipper GIF Maker safe to use?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. VideoClipper is secure, runs directly in your browser, and doesn’t require login, installation, or access to personal data."
+                  }
+                }
+              ]
+            }
+            </script>
+
+        <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              "name": "How to Create a GIF from an Online Video",
+              "description": "Follow these simple steps to convert an online video into a GIF using VideoClipper’s free GIF Maker.",
+              "totalTime": "PT2M",
+              "estimatedCost": {
+                "@type": "MonetaryAmount",
+                "currency": "USD",
+                "value": "0"
+              },
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "name": "Paste Video URL",
+                  "text": "Copy and paste the link of the online video you want to convert into a GIF."
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Set Clip Duration",
+                  "text": "Select the start and end time of the section you want to turn into a GIF. The maximum length is 60 seconds."
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Adjust GIF Settings",
+                  "text": "Optionally adjust width, frame rate (FPS), speed, and loop count to customize your GIF."
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "Create and Download GIF",
+                  "text": "Click the 'Generate GIF' button to generate your GIF and download it instantly."
+                }
+              ]
+            }
+            </script>
+
+    </main>
+
+    <script>
+        // Simple tooltip toggle for mobile
+        document.addEventListener('DOMContentLoaded', () => {
+            const tooltips = document.querySelectorAll('.tooltip');
+
+            tooltips.forEach(tooltip => {
+                tooltip.addEventListener('click', (e) => {
+                    e.stopPropagation();
+
+                    // Close all other tooltips
+                    document.querySelectorAll('.tooltip').forEach(t => {
+                        if (t !== tooltip) {
+                            t.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current tooltip
+                    tooltip.classList.toggle('active');
+                });
+            });
+
+            // Close tooltips when clicking outside
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.tooltip').forEach(tooltip => {
+                    tooltip.classList.remove('active');
+                });
+            });
+
+            // Close tooltips when scrolling
+            document.addEventListener('scroll', () => {
+                document.querySelectorAll('.tooltip').forEach(tooltip => {
+                    tooltip.classList.remove('active');
+                });
+            }, { passive: true });
+        });
+
+        // Detect mobile devices and add is-mobile class to body
+        function detectMobile() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                document.body.classList.add('is-mobile');
+            }
+        }
+
+        // Run on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', detectMobile);
+        } else {
+            detectMobile();
+        }
+        // Debounce resize handler
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(detectMobile, 200);
+        }, { passive: true });
+    </script>
+
+    <!-- Footer -->
+    <footer class="main-footer" role="contentinfo"
+        style="background-color: #f8f9fa; padding: 30px 0; margin-top: 50px; border-top: 1px solid #e9ecef;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;" itemscope
+            itemtype="https://schema.org/WPFooter">
+            <!-- Main Footer Content -->
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: nowrap; width: 100%; overflow: hidden;">
+                <!-- Left Side: Logo, Title, and Description in one line -->
+                <div
+                    style="display: flex; align-items: center; gap: 15px; white-space: nowrap; flex-shrink: 1; min-width: 0;">
+                    <img src="/images/icon-48.png" alt="VideoClipper Logo"
+                        style="width: 30px; height: 30px; object-fit: contain; flex-shrink: 0;">
+                    <h3 style="margin: 0; font-size: 1.3rem; font-weight: 600; color: #2c3e50; flex-shrink: 0;">
+                        VideoClipper
+                    </h3>
+                    <span
+                        style="color: #495057; font-size: 0.95rem; margin-left: 5px; text-overflow: ellipsis; overflow: hidden;">
+                        Free Online GIF Maker & Video Trimmer
+                    </span>
+                </div>
+
+                <!-- Right Side: Quick Links -->
+                <nav style="display: flex; gap: 20px; align-items: center; flex-shrink: 0;">
+                    <a href="/"
+                        style="color: #495057; text-decoration: none; transition: color 0.2s; font-weight: 500; white-space: nowrap;">Video
+                        Clipper</a>
+                    <a href="/gif"
+                        style="color: #1a56db; text-decoration: none; transition: color 0.2s; font-weight: 600;">GIF
+                        Maker</a>
+                    <a href="/supported-sites"
+                        style="color: #374151; text-decoration: none; transition: color 0.2s; font-weight: 500;">Supported
+                        Sites</a>
+                    <a href="/faq"
+                        style="color: #374151; text-decoration: none; transition: color 0.2s; font-weight: 500;">FAQ</a>
+                    <a href="/contact"
+                        style="color: #374151; text-decoration: none; transition: color 0.2s; font-weight: 500;">Contact</a>
+                    <a href="/terms"
+                        style="color: #374151; text-decoration: none; transition: color 0.2s; font-weight: 500;">Terms</a>
+                    <a href="/privacy"
+                        style="color: #374151; text-decoration: none; transition: color 0.2s; font-weight: 500;">Privacy</a>
+                </nav>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div
+                style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e9ecef; color: #495057; font-size: 0.9rem;">
+                <p style="margin-bottom: 5px;">&copy; 2025 VideoClipper.online</p>
+                <p style="margin: 5px 0; color: #343a40;">
+                    Developed and maintained by Mohamed Hesham.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/gif.js" defer></script>
+    <script src="/js/faq.js" defer></script>
+
+    <!-- Ko-fi Floating Button -->
+    <style>
+        #kofi-floating-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            left: auto;
+            z-index: 9999;
+            background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 8px 24px rgba(255, 94, 98, 0.35), 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            animation: kofi-pulse 2s ease-in-out infinite;
+        }
+
+        #kofi-floating-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(255, 94, 98, 0.45), 0 6px 12px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #ff5e62 0%, #ffaa77 100%);
+        }
+
+        #kofi-floating-btn:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        #kofi-floating-btn svg {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            animation: kofi-wiggle 1s ease-in-out infinite;
+        }
+
+        @keyframes kofi-pulse {
+            0%, 100% {
+                box-shadow: 0 8px 24px rgba(255, 94, 98, 0.35), 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                box-shadow: 0 8px 28px rgba(255, 94, 98, 0.45), 0 4px 10px rgba(0, 0, 0, 0.12);
+            }
+        }
+
+        @keyframes kofi-wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-5deg);
+            }
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #kofi-floating-btn {
+                bottom: 16px;
+                right: 16px;
+                left: auto;
+                padding: 12px 20px;
+                font-size: 14px;
+                gap: 8px;
+            }
+        }
+    </style>
+    <a href="https://ko-fi.com/videoclipper" target="_blank" rel="noopener noreferrer" id="kofi-floating-btn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.881 8.948c-.773-4.085-4.859-4.593-4.859-4.593H.723c-.604 0-.679.798-.679.798s-.082 7.324-.022 11.822c.164 2.424 2.586 2.672 2.586 2.672s8.267-.023 11.966-.049c2.438-.426 2.683-2.566 2.658-3.734 4.352.24 7.422-2.831 6.649-6.916zm-11.062 3.511c-1.246 1.453-4.011 3.976-4.011 3.976s-.121.119-.31.023c-.076-.057-.108-.09-.108-.09-.443-.441-3.368-3.049-4.034-3.954-.709-.965-1.041-2.7-.091-3.71.951-1.01 3.005-1.086 4.363.407 0 0 1.565-1.782 3.468-.963 1.904.82 1.832 3.011.723 4.311zm6.173.478c-.928.116-1.682.028-1.682.028V7.284h1.77s1.971.551 1.971 2.638c0 1.913-.985 2.667-2.059 3.015z"/>
+        </svg>
+        <span>Support Us</span>
+    </a>
+</body>
+
+</html>
